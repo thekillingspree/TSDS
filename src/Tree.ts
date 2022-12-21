@@ -274,5 +274,34 @@ export class BinarySearchTree<T> extends Tree<T> {
 
     return true;
   }
+
+  //Currenlt for number.
+  lowestCommonAncestor(a: T, b: T): TreeNode<T> | undefined {
+    let result: TreeNode<T> | undefined = this.root;
+    let small;
+    let large;
+
+    if (!this.isValidBST()) {
+      throw new SyntaxError("Not a Valid BST");
+    }
+
+    if (a > b) {
+      large = a;
+      small = b;
+    } else {
+      large = b;
+      small = a;
+    }
+
+    while (result) {
+      if (result.value > large) {
+        result = result.left;
+      } else if (result.value < small) {
+        result = result.right;
+      } else return result;
+    }
+
+    throw new RangeError("Could not find LCA, probably the given child nodes do not exist in the Tree");
+  }
   
 }

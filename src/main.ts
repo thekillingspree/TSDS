@@ -48,6 +48,10 @@ console.log("Right View (DFS)", Tree.rightViewDFS(binaryTree.root))
 console.log("Left View (BFS)", Tree.leftView(binaryTree.root))
 console.log("Left View (DFS)", Tree.leftViewDFS(binaryTree.root))
 console.log("Is Valid BST?", binaryTree.isValidBST())
-binaryTree.root.value = 0
+binaryTree.root.value = 0;
 console.log("Is Valid BST?", binaryTree.isValidBST())
 console.log("Level order", Tree.levelOrderArray(binaryTree.root))
+
+binaryTree.root.value = 20;
+console.log("LCA of 68 and 49 is:", binaryTree.lowestCommonAncestor(68, 49))
+
