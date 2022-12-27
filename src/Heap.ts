@@ -71,7 +71,7 @@ export class Heap<T extends Comparable> {
     insert(val: T) {
         this.values.push(val);
         let last = this.values.length -1
-        let parent = Math.floor(last/ 2)
+        let parent = Math.floor((last-1)/ 2)
         while (parent >= 0 && this.compare(this.values[last], this.values[parent])) {
             this.swap(parent, last);
             last = parent;
