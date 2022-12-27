@@ -1,4 +1,4 @@
-import { Heap, HeapType } from "./Heap";
+import { Heap } from "./Heap";
 import { StackQueue } from "./Queue";
 import { BinarySearchTree, Tree, TreeNode } from "./Tree";
 
