@@ -1,3 +1,4 @@
+import { Heap, HeapType } from "./Heap";
 import { StackQueue } from "./Queue";
 import { BinarySearchTree, Tree, TreeNode } from "./Tree";
 
@@ -55,3 +56,20 @@ console.log("Level order", Tree.levelOrderArray(binaryTree.root))
 binaryTree.root.value = 20;
 console.log("LCA of 68 and 49 is:", binaryTree.lowestCommonAncestor(68, 49))
 
+
+
+
+const heap = new Heap<number>(undefined, Heap.HeapType.MAX_HEAP);
+heap.insert(10)
+heap.insert(100)
+heap.insert(13)
+heap.insert(200)
+
+console.log(heap.values)
+
+const sort = []
+sort.push(heap.pop())
+sort.push(heap.pop())
+sort.push(heap.pop())
+sort.push(heap.pop())
+console.log("Sort:", sort);

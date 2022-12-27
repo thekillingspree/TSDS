@@ -237,6 +237,32 @@ export class Tree<T> {
     DFS(1, root);
     return result;
   }
+
+  static isSameTree<T>(p?: TreeNode<T>, q?: TreeNode<T>): boolean {
+    if (!p && !q) {
+      return true
+    }
+
+    if (!p || !q) {
+      return false
+    }
+
+    return p.value === q.value && Tree.isSameTree(p.left, q.left) && Tree.isSameTree(p.right, q.right);
+
+  }
+
+  static isSymmetric<T>(root?: TreeNode<T>): boolean {
+    if (!root) throw new Error("Please provide the root");
+
+    function checkSymmetryOfSubTrees(left?: TreeNode<T>, right?: TreeNode<T>): boolean {
+      if (!left && !right) return true;
+      if (!left || !right) return false;
+
+      return left.value === right.value && checkSymmetryOfSubTrees(left.left, right.right) && checkSymmetryOfSubTrees(left.right, right.left)
+    }
+
+    return checkSymmetryOfSubTrees(root.left, root.right);
+  }
 }
 
 
